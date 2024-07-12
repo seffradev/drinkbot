@@ -45,11 +45,16 @@ impl EventHandler for Handler {
                     return "no drink found".into();
                 }
 
+                if cocktail.glass.is_none() {
+                    return "no drink found".into();
+                }
+
                 format!(
-                    "Name: {}\nIngredients: {}\nInstructions: {}",
+                    "Name: {}\nIngredients: {}\nInstructions: {}\nGlass: {}",
                     cocktail.drink.clone().unwrap(),
                     ingredients.join(", "),
-                    cocktail.instructions.en.clone().unwrap()
+                    cocktail.instructions.en.clone().unwrap(),
+                    cocktail.glass.clone().unwrap(),
                 )
             });
 
