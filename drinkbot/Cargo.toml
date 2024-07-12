@@ -7,5 +7,8 @@ name = "drinkbot"
 version = "0.1.0"
 
 [dependencies]
+lazy_static = "1.5.0"
 serenity = "0.12.2"
 thecocktaildb-rs = "0.1.0"
+tokio = { version = "1.38.0", features = ["full"] }
+tracing = "0.1.40"
