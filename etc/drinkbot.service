@@ -1,0 +1,13 @@
+[Unit]
+Description=drinkbot
+After=multi-user.target
+
+[Service]
+Environment="THECOCKTAILDB_TOKEN="
+Environment="DISCORD_TOKEN="
+ExecStart=/usr/bin/drinkbot
+Type=simple
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
