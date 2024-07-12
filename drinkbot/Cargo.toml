@@ -1,7 +1,11 @@
 [package]
 authors.workspace = true
+description = "A Discord bot using TheCocktailDB API for drink suggestions"
 edition = "2021"
+license-file.workspace = true
 name = "drinkbot"
 version = "0.1.0"
 
 [dependencies]
+serenity = "0.12.2"
+thecocktaildb-rs = "0.1.0"
