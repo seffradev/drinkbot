@@ -1,0 +1,4 @@
+[workspace]
+members = ["drinkbot"]
+package.authors = ["Hampus Avekvist <hampus.avekvist@hey.com>"]
+resolver = "2"

@@ -1,0 +1,7 @@
+[package]
+authors.workspace = true
+edition = "2021"
+name = "drinkbot"
+version = "0.1.0"
+
+[dependencies]
