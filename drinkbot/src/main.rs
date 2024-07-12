@@ -38,7 +38,7 @@ impl EventHandler for Handler {
                     .iter()
                     .filter(|i| i.ingredient.is_some())
                     .filter(|i| i.measure.is_some())
-                    .map(|i| format!("{} ({})", i.ingredient.clone().unwrap(), i.measure.clone().unwrap()))
+                    .map(|i| format!("{} ({})", i.ingredient.clone().unwrap().trim(), i.measure.clone().unwrap().trim()))
                     .collect::<Vec<_>>();
 
                 if cocktail.instructions.en.is_none() {
@@ -50,11 +50,11 @@ impl EventHandler for Handler {
                 }
 
                 format!(
-                    "Name: {}\nIngredients: {}\nInstructions: {}\nGlass: {}",
-                    cocktail.drink.clone().unwrap(),
-                    ingredients.join(", "),
-                    cocktail.instructions.en.clone().unwrap(),
-                    cocktail.glass.clone().unwrap(),
+                    "**Name**: {}\n**Ingredients**: {}\n**Instructions**: {}\n**Glass**: {}",
+                    cocktail.drink.clone().unwrap().trim(),
+                    ingredients.join(", ").trim(),
+                    cocktail.instructions.en.clone().unwrap().trim(),
+                    cocktail.glass.clone().unwrap().trim(),
                 )
             });
 
