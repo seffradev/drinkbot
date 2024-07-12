@@ -37,7 +37,8 @@ impl EventHandler for Handler {
                     .ingredients
                     .iter()
                     .filter(|i| i.ingredient.is_some())
-                    .map(|i| i.ingredient.clone().unwrap())
+                    .filter(|i| i.measure.is_some())
+                    .map(|i| format!("{} ({})", i.ingredient.clone().unwrap(), i.measure.clone().unwrap()))
                     .collect::<Vec<_>>();
 
                 if cocktail.instructions.en.is_none() {
