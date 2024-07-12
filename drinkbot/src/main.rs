@@ -3,7 +3,7 @@ use std::env;
 use lazy_static::lazy_static;
 use serenity::{async_trait, model::channel::Message, prelude::*};
 use thecocktaildb_rs::{Client as CocktailClient, Cocktails};
-use tracing::error;
+use tracing::{error, warn};
 
 struct Handler;
 
@@ -67,7 +67,9 @@ impl EventHandler for Handler {
 
 #[tokio::main]
 async fn main() -> Result<(), anyhow::Error> {
-    dotenvy::dotenv()?;
+    if let Err(err) = dotenvy::dotenv() {
+        warn!("Failed to read .env-file: {}", err);
+    }
 
     // Login with a bot token from the environment
     let token = env::var("DISCORD_TOKEN").expect("Expected a token in the environment");
