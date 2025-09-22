@@ -7,7 +7,7 @@ name = "drinkbot"
 version = "0.1.0"
 
 [dependencies]
-anyhow = "1.0.99"
+anyhow = "1.0.100"
 dotenvy = "0.15.7"
 lazy_static = "1.5.0"
 poise = "0.6.1"
